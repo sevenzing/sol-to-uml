@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: doc
-        continue-on-error: true
         run: |
           exit 1
+        if: success() || failure()
+
       - name: unit
         run: |
           echo DONE
+        if: success() || failure()
 
       - name: integration
         run: |
           echo DONE
+        if: success() || failure()

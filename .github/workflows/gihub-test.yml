@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
+name: TESTING GIBHUB CI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: doc
+        run: |
+          exit 1
+        if: success() || failure()
+
+      - name: unit
+        run: |
+          echo DONE
+        if: success() || failure()
+
+      - name: integration
+        run: |
+          echo DONE
+        if: success() || failure()
